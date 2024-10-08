@@ -1,6 +1,6 @@
 export const USER_API = "http://localhost:8080/api/v1/user"
 export const MSG_API = "http://localhost:8080/api/v1/message"
-export const BASE_URL = "http://localhost:8080"
+export const BASE_URL = "https://fullstack-chatapp-fdxo.onrender.com"
 // utils/playNotificationSound.js
 export const playNotificationSound = () => {
     const audio = new Audio('/ding.mp3');
