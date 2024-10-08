@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import useGetOtherUser from "../hooks/useGetOtherUser";
 import OtherUser from "./OtherUser";
 
+
 function OtherUsers() {
     useGetOtherUser();
     const { otherUsers } = useSelector((store) => store.user);
