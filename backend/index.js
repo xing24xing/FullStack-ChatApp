@@ -16,10 +16,12 @@ const PORT = process.env.PORT || 3000;
 const __dirname = path.resolve();
 
 // Middleware
+// Middleware
 app.use(cors({
-    origin: 'http://localhost:5173',  // Fixed typo here
+    origin: ['http://localhost:5173', 'https://fullstack-chatapp-fdxo.onrender.com'], // Add the Render app's URL here
     credentials: true
 }));
+
 
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
