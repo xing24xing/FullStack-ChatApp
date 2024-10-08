@@ -1,33 +1,30 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import axios from "axios";
-import { setOtherUsers } from '../redux/userSlice.js';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios';
 import { BASE_URL } from '../utils/constant.js';
+import { setMessages } from '../redux/messageSlice.js';
 
-const useGetOtherUser = (token) => { // Accept token as a parameter
-  const dispatch = useDispatch();
+const useGetMessages = () => {
+    const { selectedUser } = useSelector(store => store.user);
+    const dispatch = useDispatch();
 
-  useEffect(() => {
-    const fetchOtherUsers = async () => {
-      try {
-        axios.defaults.withCredentials = true;
-        const res = await axios.get(`${BASE_URL}/api/v1/user`, {
-          headers: {
-            Authorization: `Bearer ${token}` // Set the Authorization header
-          }
-        });
-        // Store
-        console.log("other users -> ", res);
-        dispatch(setOtherUsers(res.data));
-      } catch (error) {
-        console.log("Error fetching other users:", error);
-      }
-    };
+    useEffect(() => {
+        const fetchMessages = async () => {
+            if (!selectedUser?._id) return; // Early exit if no selected user
 
-    if (token) { // Check if token exists before making the request
-      fetchOtherUsers();
-    }
-  }, [dispatch, token]);
+            try {
+                axios.defaults.withCredentials = true;
+                const res = await axios.get(`${BASE_URL}/api/v1/message/${selectedUser._id}`);
+
+                console.log("Fetched messages:", res.data); // Log the fetched messages
+                dispatch(setMessages(res.data));
+            } catch (error) {
+                console.error("Error fetching messages:", error);
+            }
+        };
+
+        fetchMessages();
+    }, [selectedUser?._id, dispatch]); // Fetch messages whenever selectedUser changes
 };
 
-export default useGetOtherUser;
+export default useGetMessages;

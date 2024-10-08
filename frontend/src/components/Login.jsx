@@ -18,7 +18,7 @@ function Login() {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-   
+   setLoading(true);
     try {
       const res = await axios.post(`${BASE_URL}/api/v1/user/login`, user, {
         headers: {
@@ -90,7 +90,7 @@ function Login() {
             type="submit"
             
           >  Login
-            {/* {loading ? "Logging in..." : "Login"} Show loading text */}
+            {loading ? "Logging in..." : "Login"} 
           </button>
         </form>
       </div>
