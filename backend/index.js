@@ -18,7 +18,7 @@ const __dirname = path.resolve();
 // Middleware
 // Middleware
 app.use(cors({
-    origin: ['https://fullstack-chatapp-fdxo.onrender.com'], // Add the Render app's URL here
+    origin: process.env.URL, // Add the Render app's URL here
     credentials: true
 }));
 

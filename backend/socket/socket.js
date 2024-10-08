@@ -7,7 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: ['https://fullstack-chatapp-fdxo.onrender.com'], // Include your production URL
+        origin: process.env.URL, // Include your production URL
         methods: ['GET', 'POST'],
         credentials: true // Allow credentials (cookies, authorization headers, etc.)
     },
