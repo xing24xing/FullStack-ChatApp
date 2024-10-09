@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import { BASE_URL } from "../utils/constant";
-import { setMessages } from "../redux/messageSlice";
+import { BASE_URL } from "../utils/constant.js";
+import { setMessages } from "../redux/messageSlice.js";
 import { IoSend } from "react-icons/io5";
 import Picker from 'emoji-picker-react'; // Correct import
 

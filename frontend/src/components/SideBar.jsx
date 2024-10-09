@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
-import { setAuthUser, setOtherUsers, setSelectedUser } from '../redux/userSlice';
-import { BASE_URL, USER_API } from '../utils/constant';
+import { setAuthUser, setOtherUsers, setSelectedUser } from '../redux/userSlice.js';
+import { BASE_URL, USER_API } from '../utils/constant.js';
 import OtherUsers from './OtherUsers';
 
 function SideBar() {

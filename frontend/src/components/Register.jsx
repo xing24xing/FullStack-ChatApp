@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import { BASE_URL, USER_API } from "../utils/constant";
+import { BASE_URL, USER_API } from "../utils/constant.js";
 
 function Register() {
   const navigate = useNavigate();

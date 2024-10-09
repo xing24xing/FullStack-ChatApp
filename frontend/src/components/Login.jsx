@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import { BASE_URL, USER_API } from "../utils/constant";
+import { BASE_URL, USER_API } from "../utils/constant.js";
 import { useDispatch } from "react-redux";
-import store from "../redux/store";
+import store from "../redux/store.js";
 import { setAuthUser } from "../redux/userSlice.js";
 
 function Login() {

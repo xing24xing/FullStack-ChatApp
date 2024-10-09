@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { BASE_URL, playNotificationSound } from '../utils/constant.js'; // Include playNotificationSound here
-import { deleteMessage } from '../redux/messageSlice'; // Import deleteMessage action
+import { deleteMessage } from '../redux/messageSlice.js'; // Import deleteMessage action
 
 const Message = ({ message }) => {
     const [showDelete, setShowDelete] = useState(false);
